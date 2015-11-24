@@ -758,6 +758,14 @@ if __name__ == "__main__":
         aaptargs = [aaptpath, 'package', '-f', '--auto-add-overlay', '-F', os.path.join(bindir, 'res.zip')]
         aaptargs.append('-S')
         aaptargs.append(binresdir)
+
+        # Error Fix - roger
+        exporesdir = os.path.join(dir, 'build', 'intermediates', 'exploded-aar')
+        aaptargs.append('-S')
+        aaptargs.append(os.path.join(exporesdir, 'com.android.support/appcompat-v7/23.0.1/res'))
+        aaptargs.append('-S')
+        aaptargs.append(os.path.join(exporesdir, 'com.android.support/design/23.0.1/res'))
+
         rdir = resdir(dir)
         if rdir:
             aaptargs.append('-S')
