@@ -759,7 +759,7 @@ if __name__ == "__main__":
         aaptargs.append('-S')
         aaptargs.append(binresdir)
 
-        # Error Fix - roger
+        #Set apcompat and design android library's res
         exporesdir = os.path.join(dir, 'build', 'intermediates', 'exploded-aar')
         aaptargs.append('-S')
         aaptargs.append(os.path.join(exporesdir, 'com.android.support/appcompat-v7/23.0.1/res'))
